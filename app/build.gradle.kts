@@ -37,7 +37,6 @@ android {
         viewBinding = true
     }
 
-    // Disable JDK image generation to avoid jlink issue
     packaging {
         jniLibs {
             useLegacyPackaging = true
@@ -46,6 +45,12 @@ android {
 }
 
 dependencies {
+    // Core Android
+    implementation(libs.core.ktx)
+    implementation(libs.appcompat)
+    implementation(libs.material)
+
+    // Lifecycle
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.lifecycle.livedata.ktx)
 
@@ -64,6 +69,7 @@ dependencies {
     // Gson
     implementation(libs.gson)
 
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

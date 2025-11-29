@@ -3,14 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="#FEF2F2"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:paddingHorizontal="24dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="48dp">
 
         <!-- Logo & Title -->
         <LinearLayout
@@ -18,19 +20,18 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:layout_marginTop="48dp"
             android:layout_marginBottom="48dp">
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                app:cardBackgroundColor="#F44336"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="8dp">
+                app:cardBackgroundColor="#EF4444"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp">
 
                 <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:contentDescription="@string/app_name"
                     android:src="@android:drawable/ic_dialog_alert"
@@ -42,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Risk Manager"
-                android:textColor="#212121"
+                android:textColor="#111827"
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
@@ -51,8 +52,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
+                android:lineSpacingMultiplier="1.3"
                 android:text="실패를 전제로 분석하여\n비용 낭비를 줄이세요"
-                android:textColor="#757575"
+                android:textColor="#6B7280"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -60,22 +62,23 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="12dp"
-            app:cardElevation="2dp"
-            app:strokeColor="#E0E0E0"
+            app:cardElevation="1dp"
+            app:strokeColor="#F3F4F6"
             app:strokeWidth="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="20dp">
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    app:cardBackgroundColor="#FFEBEE"
+                    app:cardBackgroundColor="#FEE2E2"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
@@ -83,9 +86,9 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
-                        android:contentDescription="@string/app_name"
+                        android:contentDescription="FMEA 분석"
                         android:src="@android:drawable/stat_notify_error"
-                        app:tint="#F44336" />
+                        app:tint="#DC2626" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <LinearLayout
@@ -99,7 +102,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="FMEA 방식 분석"
-                        android:textColor="#212121"
+                        android:textColor="#111827"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -108,8 +111,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="O/S/D 값을 기반으로 RPN 위험도를 정밀 계산"
-                        android:textColor="#757575"
-                        android:textSize="13sp" />
+                        android:textColor="#6B7280"
+                        android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -117,22 +120,23 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="12dp"
-            app:cardElevation="2dp"
-            app:strokeColor="#E0E0E0"
+            app:cardElevation="1dp"
+            app:strokeColor="#F3F4F6"
             app:strokeWidth="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="20dp">
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    app:cardBackgroundColor="#E3F2FD"
+                    app:cardBackgroundColor="#DBEAFE"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
@@ -140,9 +144,9 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
-                        android:contentDescription="@string/app_name"
+                        android:contentDescription="AI 조언"
                         android:src="@android:drawable/ic_dialog_info"
-                        app:tint="#2196F3" />
+                        app:tint="#2563EB" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <LinearLayout
@@ -156,7 +160,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AI 실행 조언"
-                        android:textColor="#212121"
+                        android:textColor="#111827"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -165,8 +169,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="리스크를 낮추기 위한 구체적인 실행 방안 제공"
-                        android:textColor="#757575"
-                        android:textSize="13sp" />
+                        android:textColor="#6B7280"
+                        android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -174,22 +178,23 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="32dp"
+            app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="12dp"
-            app:cardElevation="2dp"
-            app:strokeColor="#E0E0E0"
+            app:cardElevation="1dp"
+            app:strokeColor="#F3F4F6"
             app:strokeWidth="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="20dp">
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    app:cardBackgroundColor="#E8F5E9"
+                    app:cardBackgroundColor="#DCFCE7"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
@@ -197,9 +202,9 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
-                        android:contentDescription="@string/app_name"
+                        android:contentDescription="보고서"
                         android:src="@android:drawable/ic_menu_save"
-                        app:tint="#4CAF50" />
+                        app:tint="#16A34A" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <LinearLayout
@@ -213,7 +218,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="보고서 &amp; 이력"
-                        android:textColor="#212121"
+                        android:textColor="#111827"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -222,8 +227,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="분석 결과를 PDF로 저장하고 언제든 다시 확인"
-                        android:textColor="#757575"
-                        android:textSize="13sp" />
+                        android:textColor="#6B7280"
+                        android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -234,8 +239,11 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginBottom="12dp"
+            android:backgroundTint="#EF4444"
+            android:elevation="8dp"
             android:text="새 프로젝트 분석하기"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:cornerRadius="12dp"
             app:icon="@android:drawable/ic_input_add"
             app:iconGravity="textStart" />
@@ -245,33 +253,36 @@
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@android:color/white"
             android:text="분석 이력 보기"
-            android:textColor="#424242"
+            android:textColor="#374151"
             android:textSize="16sp"
             app:cornerRadius="12dp"
             app:icon="@android:drawable/ic_menu_recent_history"
             app:iconGravity="textStart"
-            app:iconTint="#424242"
-            app:strokeColor="#BDBDBD" />
+            app:iconTint="#374151"
+            app:strokeColor="#D1D5DB"
+            app:strokeWidth="1dp" />
 
         <!-- Warning Note -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:cardBackgroundColor="#FFFDE7"
+            app:cardBackgroundColor="#FFFBEB"
             app:cardCornerRadius="8dp"
             app:cardElevation="0dp"
-            app:strokeColor="#FBC02D"
+            app:strokeColor="#FDE68A"
             app:strokeWidth="1dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="12dp"
-                android:text="💡 낙관 편향을 극복하세요\n대부분의 실패는 예측 가능합니다"
-                android:textColor="#F57F17"
-                android:textSize="12sp" />
+                android:lineSpacingMultiplier="1.3"
+                android:padding="16dp"
+                android:text="💡 낙관 편향을 극복하세요\n통계적으로 70%의 프로젝트가 예상보다 높은 비용과 시간이 소요됩니다."
+                android:textColor="#92400E"
+                android:textSize="13sp" />
         </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>

@@ -257,6 +257,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginBottom="12dp"
+            android:backgroundTint="#EF4444"
             android:text="AI 실행 조언 보기"
             android:textSize="16sp"
             app:cornerRadius="12dp"
