@@ -39,8 +39,9 @@
             android:layout_height="80dp"
             android:layout_marginBottom="16dp"
             android:alpha="0.3"
+            android:contentDescription="@string/app_name"
             android:src="@android:drawable/ic_menu_recent_history"
-            android:tint="#9E9E9E" />
+            app:tint="#9E9E9E" />
 
         <TextView
             android:layout_width="wrap_content"
