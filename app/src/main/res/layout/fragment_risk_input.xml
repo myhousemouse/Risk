@@ -85,8 +85,9 @@
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:layout_gravity="center"
+                                android:contentDescription="@string/app_name"
                                 android:src="@android:drawable/ic_dialog_alert"
-                                android:tint="@android:color/white" />
+                                app:tint="@android:color/white" />
                         </com.google.android.material.card.MaterialCardView>
 
                         <LinearLayout
@@ -410,7 +411,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_previous"
-            style="@style/Widget.Material3.Button.OutlinedButton"
+            style="?attr/materialButtonOutlinedStyle"
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:layout_marginEnd="8dp"

@@ -32,8 +32,9 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_gravity="center"
+                    android:contentDescription="@string/app_name"
                     android:src="@android:drawable/ic_dialog_alert"
-                    android:tint="@android:color/white" />
+                    app:tint="@android:color/white" />
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
@@ -82,8 +83,9 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
+                        android:contentDescription="@string/app_name"
                         android:src="@android:drawable/stat_notify_error"
-                        android:tint="#F44336" />
+                        app:tint="#F44336" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <LinearLayout
@@ -138,8 +140,9 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
+                        android:contentDescription="@string/app_name"
                         android:src="@android:drawable/ic_dialog_info"
-                        android:tint="#2196F3" />
+                        app:tint="#2196F3" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <LinearLayout
@@ -194,8 +197,9 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
+                        android:contentDescription="@string/app_name"
                         android:src="@android:drawable/ic_menu_save"
-                        android:tint="#4CAF50" />
+                        app:tint="#4CAF50" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <LinearLayout
@@ -238,7 +242,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_view_history"
-            style="@style/Widget.Material3.Button.OutlinedButton"
+            style="?attr/materialButtonOutlinedStyle"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="분석 이력 보기"
