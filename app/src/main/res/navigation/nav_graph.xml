@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.Ebiz.risk.ui.HomeFragment"
+        android:label="Risk Manager">
+        <action
+            android:id="@+id/action_home_to_projectInput"
+            app:destination="@id/projectInputFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_home_to_history"
+            app:destination="@id/historyFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/projectInputFragment"
+        android:name="com.Ebiz.risk.ui.ProjectInputFragment"
+        android:label="프로젝트 정보 입력">
+        <action
+            android:id="@+id/action_projectInput_to_riskInput"
+            app:destination="@id/riskInputFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/riskInputFragment"
+        android:name="com.Ebiz.risk.ui.RiskInputFragment"
+        android:label="리스크 평가">
+        <action
+            android:id="@+id/action_riskInput_to_rpnResults"
+            app:destination="@id/rpnResultsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/rpnResultsFragment"
+        android:name="com.Ebiz.risk.ui.RPNResultsFragment"
+        android:label="RPN 분석 결과">
+        <action
+            android:id="@+id/action_rpnResults_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.Ebiz.risk.ui.HistoryFragment"
+        android:label="분석 이력" />
+
+</navigation>
+

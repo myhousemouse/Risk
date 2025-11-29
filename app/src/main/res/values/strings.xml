@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Risk Manager</string>
+
+    <!-- Home Screen -->
+    <string name="home_title">Risk Manager</string>
+    <string name="home_subtitle">실패를 전제로 분석하여\n비용 낭비를 줄이세요</string>
+    <string name="new_project">새 프로젝트 분석하기</string>
+    <string name="view_history">분석 이력 보기</string>
+
+    <!-- Project Input -->
+    <string name="project_title">프로젝트 제목</string>
+    <string name="project_description">프로젝트 설명</string>
+    <string name="budget">투입 예산 (만원)</string>
+    <string name="start_analysis">리스크 분석 시작</string>
+
+    <!-- Risk Input -->
+    <string name="occurrence">발생도 (Occurrence)</string>
+    <string name="severity">심각도 (Severity)</string>
+    <string name="detection">검출도 (Detection)</string>
+    <string name="rpn">RPN (Risk Priority Number)</string>
+    <string name="next_risk">다음 리스크</string>
+    <string name="previous">이전</string>
+    <string name="complete_analysis">분석 완료</string>
+
+    <!-- Results -->
+    <string name="failure_probability">예상 실패 확률</string>
+    <string name="total_rpn">총 RPN</string>
+    <string name="estimated_loss">예상 손실</string>
+    <string name="save_project">프로젝트 저장하기</string>
+    <string name="view_ai_actions">AI 실행 조언 보기</string>
+
+    <!-- History -->
+    <string name="history_title">분석 이력</string>
+    <string name="no_history">분석 이력이 없습니다</string>
+
+</resources>
