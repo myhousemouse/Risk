@@ -131,7 +131,7 @@ class RiskInputFragment : Fragment() {
                 // 다음 리스크로
                 viewModel.moveToNextRisk()
             } else {
-                // 분석 완료 - 결과 화면으로
+                // 분석 완료 - RPN 결과 화면으로
                 viewModel.completeRiskAnalysis()
                 findNavController().navigate(R.id.action_riskInput_to_rpnResults)
             }

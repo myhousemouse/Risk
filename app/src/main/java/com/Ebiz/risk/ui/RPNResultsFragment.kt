@@ -82,7 +82,8 @@ class RPNResultsFragment : Fragment() {
 
     private fun setupButtons() {
         binding.btnViewActions.setOnClickListener {
-            Toast.makeText(context, "AI 실행 조언 기능은 추후 구현 예정입니다", Toast.LENGTH_SHORT).show()
+            // AI 조언 화면으로 이동
+            findNavController().navigate(R.id.action_rpnResults_to_aiActions)
         }
 
         binding.btnSaveProject.setOnClickListener {
