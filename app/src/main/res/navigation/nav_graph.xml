@@ -51,9 +51,29 @@
     </fragment>
 
     <fragment
+        android:id="@+id/aiActionsFragment"
+        android:name="com.Ebiz.risk.ui.AIActionsFragment"
+        android:label="AI 실행 조언">
+        <action
+            android:id="@+id/action_aiActions_to_rpnResults"
+            app:destination="@id/rpnResultsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
         android:id="@+id/rpnResultsFragment"
         android:name="com.Ebiz.risk.ui.RPNResultsFragment"
         android:label="RPN 분석 결과">
+        <action
+            android:id="@+id/action_rpnResults_to_aiActions"
+            app:destination="@id/aiActionsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
         <action
             android:id="@+id/action_rpnResults_to_home"
             app:destination="@id/homeFragment"

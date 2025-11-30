@@ -6,15 +6,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.Ebiz.risk.data.RiskDatabase
+import com.Ebiz.risk.data.model.RiskAction
 import com.Ebiz.risk.model.Project
 import com.Ebiz.risk.model.ProjectWithRisks
 import com.Ebiz.risk.model.Risk
+import com.Ebiz.risk.repository.AIRepository
 import com.Ebiz.risk.repository.RiskRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 class RiskViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: RiskRepository
+    private val aiRepository = AIRepository()
 
     // 현재 진행 중인 프로젝트 데이터
     private val _currentProject = MutableLiveData<Project?>()
@@ -25,6 +28,16 @@ class RiskViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _currentRiskIndex = MutableLiveData(0)
     val currentRiskIndex: LiveData<Int> = _currentRiskIndex
+
+    // AI Actions 관련
+    private val _aiActions = MutableLiveData<List<RiskAction>>(emptyList())
+    val aiActions: LiveData<List<RiskAction>> = _aiActions
+
+    private val _isLoadingAI = MutableLiveData(false)
+    val isLoadingAI: LiveData<Boolean> = _isLoadingAI
+
+    private val _aiError = MutableLiveData<String?>()
+    val aiError: LiveData<String?> = _aiError
 
     // 저장된 프로젝트 목록
     val allProjects: Flow<List<Project>>
@@ -193,6 +206,46 @@ class RiskViewModel(application: Application) : AndroidViewModel(application) {
         _currentProject.value = null
         _currentRisks.value = mutableListOf()
         _currentRiskIndex.value = 0
+        _aiActions.value = emptyList<RiskAction>()
+        _aiError.value = null
+    }
+
+    // AI로 실행 조언 생성
+    fun generateAIActions() {
+        val project = _currentProject.value ?: return
+        val risks = _currentRisks.value ?: return
+
+        if (risks.isEmpty()) return
+
+        _isLoadingAI.value = true
+        _aiError.value = null
+
+        viewModelScope.launch {
+            try {
+                val riskPairs = risks.mapIndexed { index, risk ->
+                    (index + 1) to risk.name
+                }
+
+                val result = aiRepository.generateRiskActions(
+                    projectTitle = project.title,
+                    projectDescription = project.description,
+                    risks = riskPairs
+                )
+
+                result.onSuccess { actions ->
+                    _aiActions.value = actions
+                }.onFailure { error ->
+                    _aiError.value = error.message ?: "AI 조언 생성에 실패했습니다"
+                    // 실패 시 기본 조언 제공
+                    _aiActions.value = emptyList<RiskAction>()
+                }
+            } catch (e: Exception) {
+                _aiError.value = e.message ?: "알 수 없는 오류가 발생했습니다"
+                _aiActions.value = emptyList<RiskAction>()
+            } finally {
+                _isLoadingAI.value = false
+            }
+        }
     }
 }
 
